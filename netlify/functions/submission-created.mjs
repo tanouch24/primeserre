@@ -26,7 +26,7 @@ export function telegramMessage(d) {
   if (S && ((d.culture === 'maraichere' && S < 5000) || (d.culture === 'horticole' && S < 7000))) alerte.push('Sous la surface minimale');
 
   return (
-    '🌱 <b>Nouvelle demande serre</b>\n\n' +
+    '🌱 <b>Nouvelle demande serre</b>' + (d.reference ? ` · ${esc(d.reference)}` : '') + '\n\n' +
     ligne('Nom', d.nom) +
     ligne('Exploitation', d.exploitation) +
     ligne('Téléphone', d.telephone) +
