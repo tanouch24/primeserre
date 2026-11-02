@@ -81,6 +81,15 @@ header.top nav .btn{padding:11px 16px;font-size:.92rem;color:#fff}
 .crumbs span+span::before{content:"›";margin:0 8px;color:var(--line-strong)}
 .crumbs span:last-child{color:var(--primary);font-weight:600}
 
+.hero .sub{font-size:1.15rem;color:var(--ink);margin:-4px 0 12px}
+.hero .sub b{color:var(--accent)}
+.hero h1{font-size:clamp(1.7rem,3vw,2.25rem)}
+.below-form{display:flex;gap:12px;align-items:flex-start;margin-top:16px;padding:14px 16px;background:#fff;border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:4px}
+.below-form svg.ico{stroke:var(--accent)}
+.below-form b{display:block;color:var(--ink)}
+.below-form span{color:var(--muted);font-size:.93rem}
+.turnkey{margin:30px 0 0;font-weight:700;font-size:1.15rem;color:var(--primary)}
+
 /* formulaire */
 .card{background:#fff;border:1px solid var(--line);border-radius:4px;box-shadow:0 1px 2px rgba(17,31,58,.04),0 8px 24px rgba(17,31,58,.06)}
 .form-head{padding:22px 26px 18px;border-bottom:1px solid var(--line)}
@@ -180,7 +189,7 @@ section.block.soft{background:var(--bg-soft)}
 @media(max-width:860px){.crow{grid-template-columns:44px 1fr}.crow > div{padding:16px}.crow .c{grid-column:1 / -1;border-left:0;border-top:1px solid var(--line)}}
 
 /* déroulement */
-.timeline{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,1fr);counter-reset:t}
+.timeline{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(6,1fr);counter-reset:t}
 .timeline li{position:relative;padding:0 18px 0 0}
 .timeline li::before{counter-increment:t;content:counter(t);display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:#fff;border:1.5px solid var(--primary);color:var(--primary);font-weight:700;font-size:.92rem;position:relative;z-index:1;margin-bottom:14px}
 .timeline li::after{content:"";position:absolute;top:17px;left:34px;right:0;height:1.5px;background:var(--line-strong)}
@@ -253,15 +262,14 @@ footer .legal{border-top:1px solid #24304a;padding-top:18px;font-size:.8rem;colo
 <section class="hero">
   <div class="wrap hero-grid">
     <div class="hero-intro">
-      <nav class="crumbs" aria-label="Fil d'Ariane"><span>Agriculture</span><span>Serres maraîchères et horticoles</span><span>Fiche CEE AGRI-TH-108</span></nav>
-      <h1>Pompe à chaleur pour vos serres : <span class="hl">financement à 100&nbsp;%</span> par les certificats d'économies d'énergie</h1>
-      <p class="lead">Remplacez votre chauffage au gaz, au fioul ou au bois, ou équipez une serre non chauffée, avec une pompe à chaleur air/eau. Le projet est pris en charge dans le cadre de la fiche CEE AGRI-TH-108, sous réserve d'éligibilité.</p>
+      <span class="label">Serres maraîchères et horticoles</span>
+      <h1>Bénéficier du remplacement de votre système de chauffage au gaz ou au fioul par une pompe à chaleur <span class="hl">financée par les Certificats d'Économies d'Énergie (CEE)</span>.</h1>
+      <p class="sub">Notamment équiper une serre non chauffée ? <b>C'est désormais envisageable&nbsp;!</b></p>
+      <p class="lead">La pompe à chaleur air/eau vous permet de réduire durablement votre consommation énergétique, de maîtriser vos coûts d'exploitation et de vous affranchir progressivement des énergies fossiles.</p>
     </div>
 
     <div class="hero-facts">
       <ul class="keypoints">
-        <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12l5 5L20 6"/></svg><div><b>Aucun reste à charge</b><span>Financement intégral confirmé par écrit avant tout engagement.</span></div></li>
-        <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 20V11l4.5-5L12 11l4.5-5L21 11v9z"/></svg><div><b>Serres neuves ou existantes</b><span>Chauffées ou non, à partir de 5 000 m² en maraîchage.</span></div></li>
         <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><div><b>Accompagnement de bout en bout</b><span>Étude, dossier CEE, installation et contrôle coordonnés.</span></div></li>
       </ul>
       <div class="ref">
@@ -288,7 +296,7 @@ footer .legal{border-top:1px solid #24304a;padding-top:18px;font-size:.8rem;colo
 
           <div class="form-head">
             <h2>Vérifier l'éligibilité de ma serre</h2>
-            <p>Gratuit et sans engagement. Réponse sous un jour ouvré.</p>
+            <p>Sans engagement. Réponse sous un jour ouvré.</p>
             <div class="progress" aria-hidden="true"><span class="on" id="p1"></span><span id="p2"></span></div>
             <div class="stepinfo" id="stepinfo">Étape 1 sur 2 : votre serre</div>
           </div>
@@ -386,10 +394,14 @@ footer .legal{border-top:1px solid #24304a;padding-top:18px;font-size:.8rem;colo
           <div class="recap"><dl id="t-recap"></dl></div>
           <h4>Prochaines étapes</h4>
           <ol>
-            <li>Appel de vérification des critères (15 minutes)</li>
-            <li>Confirmation écrite du financement, avant tout devis</li>
-            <li>Étude de dimensionnement par un bureau d'études indépendant</li>
+            <li>Analyse des données</li>
+            <li>Prise de contact</li>
+            <li>Visite technique</li>
+            <li>Étude dimensionnement</li>
+            <li>Installations</li>
+            <li>Montage administratif</li>
           </ol>
+          <p style="margin:8px 0 0;font-weight:600;color:var(--ink)">Votre projet clef en main.</p>
           <h4>Documents utiles pour l'appel</h4>
           <ul>
             <li>Factures d'énergie de la dernière saison de chauffe</li>
@@ -397,6 +409,10 @@ footer .legal{border-top:1px solid #24304a;padding-top:18px;font-size:.8rem;colo
             <li>Facture d'électricité (puissance souscrite)</li>
           </ul>
         </div>
+      </div>
+      <div class="below-form">
+        <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 20V11l4.5-5L12 11l4.5-5L21 11v9z"/></svg>
+        <div><b>Serres neuves ou existantes</b><span>Chauffées ou non, à partir de 5&nbsp;000 m² en maraîchage, 7&nbsp;000 m² en horticulture</span></div>
       </div>
     </div>
   </div>
@@ -521,16 +537,18 @@ footer .legal{border-top:1px solid #24304a;padding-top:18px;font-size:.8rem;colo
 <section class="block" id="deroulement">
   <div class="wrap">
     <div class="head">
-      <span class="label">Déroulement</span>
+      <span class="label">Prochaines étapes</span>
       <h2>De votre demande à la mise en service</h2>
     </div>
     <ol class="timeline">
-      <li><h3>Vérification</h3><p>Un échange de 15 minutes pour contrôler les critères d'éligibilité.</p></li>
-      <li><h3>Accord de financement</h3><p>Confirmation écrite du financement, avant toute signature de devis.</p></li>
-      <li><h3>Étude</h3><p>Dimensionnement par un bureau d'études indépendant de l'installateur.</p></li>
-      <li><h3>Installation</h3><p>Pose, raccordement et mise en service par un installateur professionnel.</p></li>
-      <li><h3>Contrôle</h3><p>Contrôle sur site et constitution du dossier CEE.</p></li>
+      <li><h3>Analyse des données</h3><p>Lecture des informations de votre serre envoyées par le formulaire.</p></li>
+      <li><h3>Prise de contact</h3><p>Un conseiller vous appelle pour vérifier les critères d'éligibilité.</p></li>
+      <li><h3>Visite technique</h3><p>Relevé sur place : serre, couverture, chauffage actuel, raccordement électrique.</p></li>
+      <li><h3>Étude dimensionnement</h3><p>Calcul de la puissance des pompes à chaleur et du stockage par un bureau d'études indépendant.</p></li>
+      <li><h3>Installations</h3><p>Pose, raccordement et mise en service par un installateur professionnel.</p></li>
+      <li><h3>Montage administratif</h3><p>Constitution et suivi du dossier CEE jusqu'au contrôle sur site.</p></li>
     </ol>
+    <p class="turnkey">Votre projet clef en main.</p>
   </div>
 </section>
 
